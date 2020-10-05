@@ -1,0 +1,910 @@
+
+
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+ 
+</style>
+</head>
+
+<body id="gchart-bdp">
+<div class="container-fluid">
+  <div class="row">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <panel-title><a href="#collapsed-content" data-toggle="collapse"><span class="badge">Select ranges</span></a></panel-title>
+
+      </div>
+        <div class="panel-collapse collapse" id="collapsed-content">
+          <div class="panel-body">
+            <div class="container col-xs-12 col-sm-3">
+              <div class="panel panel-default quick-ranges padding-small">
+                <div class="panel-heading">
+                  <h4 class="panel-title"> <span class="glyphicon glyphicon-cog pull-left"></span><span> QUICK RANGES</span></h4>
+                </div>
+                <div class="panel-body">
+                  <ul class="nav nav-pills nav-stacked" id="quick-ranges">
+                    <li class="active" id="day"><a href="#">1 day</a></li>
+                    <li id="week"><a href="#">Week</a></li>
+                    <li id="month"><a href="#">Month</a></li>
+                    <hr/>
+                    
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="container col-xs-12 col-sm-3"></div>
+            <div class="container col-xs-12 col-sm-3"></div>
+            <div class="container col-xs-12 col-sm-3">
+           
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel slide" id="chartCarousel" data-ride="carousel">
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <div class="input-group date col-sm-2 col-sm-offset-5 col-xs-10 col-xs-offset-1 datepicker-component-container" id="datepicker">
+            <input class="form-control" type="text"/><span class="input-group-addon datepicker-toggler"><span class="glyphicon glyphicon-th"></span></span>
+          </div>
+          <div class="chart" id="chart"></div>
+<center>
+    <label for="data" style="color: white; font-size: 17px; font-family: sans-serif;">date</label>
+  </center>
+        </div>
+      </div><a class="left carousel-control" href="#chartCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#chartCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span><span class="sr-only">Next</span></a>
+    </div>
+  </div>
+
+<br>
+
+
+
+
+  
+  <div class="container-fluid">
+    <div class="row">
+   
+      
+        <div class="panel-collapse collapse" id="collapsed-content">
+          <div class="panel-body">
+            <div class="container col-xs-12 col-sm-3">
+              <div class="panel panel-default quick-ranges padding-small">
+                <div class="panel-heading">
+                  <h4 class="panel-title"> <span class="glyphicon glyphicon-cog pull-left"></span><span> QUICK RANGES</span></h4>
+                </div>
+                <div class="panel-body">
+                  
+                </div>
+              </div>
+            </div>
+            <div class="container col-xs-12 col-sm-3"></div>
+            <div class="container col-xs-12 col-sm-3"></div>
+            <div class="container col-xs-12 col-sm-3">
+           
+            </div>
+          </div>
+        </div>
+      
+    </div>
+    
+    <div class="carousel slide" id="chartCarousel" data-ride="carousel">
+
+      <div class="carousel-inner" role="listbox">
+
+        <div class="item active">
+          <br>
+            <center>
+  &nbsp;&nbsp;&nbsp;&nbsp; <label for="data" style="color: white; font-size: 17px; font-family: sans-serif;">Total Data Consumption</label>
+    &nbsp;&nbsp;<img src="images.png" style="width: 24px; height:19px; margin: auto;">
+  <form id="form1" name="form1" onchange="drawChart1()" >
+      <select id="thedropdown">
+      <option value="" disabled selected>Select your option</option>
+        <option  id="WlanA"><a href="#" style="color: skyblue">ALL WAN Links</a></option>
+        <option  id="LanA"><a href="#" style="color: skyblue">WAN-Port A</a></option>
+        <option  id="PortA"><a href="#" style="color: skyblue">WAN-Port B</a></option>
+     
+      </select>
+         <input type="reset" value="Reset">
+    </form>
+<br>
+       <form id="form2" name="form2" onchange="drawChart6()" >
+      <select id="thedropdown">
+      <option value="" disabled selected>Select your option</option>
+        <option  id="WlanA"><a href="#" style="color: skyblue">Download Usage</a></option>
+        <option  id="LanA"><a href="#" style="color: skyblue">Upload Usage</a></option>
+        
+     
+      </select>
+         <input type="reset" value="Reset">
+    </form>
+
+          <div class="chart" id="chart1"></div>
+          <label for="data" style="color: white; font-size: 17px; font-family: sans-serif;">date</label>
+        </center>
+     
+        </div>
+      </div><a class="left carousel-control" href="#chartCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#chartCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span><span class="sr-only">Next</span></a>
+    </div>
+  </div>
+
+
+
+
+<br>
+
+
+
+
+<div class="container-fluid">
+    <div class="row">
+      
+        
+      <div>
+         <div>
+
+  <!-- Trigger the modal with a button -->
+ 
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+         <!--Creates the popup body-->
+<div>
+           
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+      
+
+      </div>
+
+
+
+
+        <div class="panel-collapse collapse" id="collapsed-content">
+          <div class="panel-body">
+            <div class="container col-xs-12 col-sm-3">
+              <div class="panel panel-default quick-ranges padding-small">
+                <div class="panel-heading">
+              
+                </div>
+                <div class="panel-body">
+                  
+                </div>
+            
+            </div>
+            <div class="container col-xs-12 col-sm-3"></div>
+            <div class="container col-xs-12 col-sm-3"></div>
+            <div class="container col-xs-12 col-sm-3">
+             
+            </div>
+          </div>
+        </div>
+     
+    
+    <div class="carousel slide" id="chartCarousel" data-ride="carousel">
+      <div class="carousel-inner" role="listbox">
+
+        <div class="item active">
+          <br>
+
+            <center>
+    <!-- Trigger the modal with a button -->
+ <panel-title> <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="font-size: 10px; background-color: white; color: black;">SHOW TABLE</button></panel-title>
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+         <!--Creates the popup body-->
+<div>
+  <h2>Basic Table</h2>
+  <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>            
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+     &nbsp;&nbsp;&nbsp;&nbsp; <label for="data" style="color: white; font-size: 17px; font-family: sans-serif;"> ISPSpeed </label>
+     &nbsp;&nbsp;<img src="images.png" style="width: 24px; height:19px; margin: auto;">
+     <form id="form" name="form" onchange="drawChart6()" >
+      <select id="thedropdown">
+      <option value="" disabled selected>Select your option</option>
+        <option  id="WlanA"><a href="#" style="color: skyblue">Download Usage</a></option>
+        <option  id="LanA"><a href="#" style="color: skyblue">Upload Usage</a></option>
+        
+     
+      </select>
+         <input type="reset" value="Reset">
+    </form>
+
+
+          <div class="chart" id="chart2"></div>
+          <label for="data" style="color: white; font-size: 17px; font-family: sans-serif;">date</label>
+</center>
+     
+        </div>
+
+      </div><a class="left carousel-control" href="#chartCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#chartCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span><span class="sr-only">Next</span></a>
+    </div>
+  </div>
+  
+ 
+
+<br>
+ 
+  <div class="container-fluid">
+    <div class="row">
+   
+      
+        <div class="panel-collapse collapse" id="collapsed-content">
+          <div class="panel-body">
+            <div class="container col-xs-12 col-sm-3">
+              <div class="panel panel-default quick-ranges padding-small">
+                <div class="panel-heading">
+                  <h4 class="panel-title"> <span class="glyphicon glyphicon-cog pull-left"></span><span> QUICK RANGES</span></h4>
+                </div>
+                <div class="panel-body">
+                  
+                </div>
+              </div>
+            </div>
+            <div class="container col-xs-12 col-sm-3"></div>
+            <div class="container col-xs-12 col-sm-3"></div>
+            <div class="container col-xs-12 col-sm-3">
+           
+            </div>
+          </div>
+        </div>
+      
+    </div>
+    
+    <div class="carousel slide" id="chartCarousel" data-ride="carousel">
+
+      <div class="carousel-inner" role="listbox">
+
+        <div class="item active">
+          <br>
+            <center>
+
+  &nbsp;&nbsp;&nbsp;&nbsp; <label for="data" style="color: white; font-size: 17px; font-family: sans-serif;">Average Speed Per User</label>
+    &nbsp;&nbsp;<img src="images.png" style="width: 24px; height:19px; margin: auto;">
+ 
+
+       
+
+ 
+          <div class="chart" id="chart3"></div>
+          <label for="data" style="color: white; font-size: 17px; font-family: sans-serif;">date</label>
+
+</center>
+        </div>
+      </div><a class="left carousel-control" href="#chartCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#chartCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span><span class="sr-only">Next</span></a>
+    </div>
+  </div>
+
+
+<br>
+ 
+  <div class="container-fluid">
+    <div class="row">
+   
+      
+        <div class="panel-collapse collapse" id="collapsed-content">
+          <div class="panel-body">
+            <div class="container col-xs-12 col-sm-3">
+              <div class="panel panel-default quick-ranges padding-small">
+                <div class="panel-heading">
+                  
+                </div>
+                <div class="panel-body">
+                  
+                </div>
+              </div>
+            </div>
+            <div class="container col-xs-12 col-sm-3"></div>
+            <div class="container col-xs-12 col-sm-3"></div>
+            <div class="container col-xs-12 col-sm-3">
+           
+            </div>
+          </div>
+        </div>
+      
+    </div>
+    
+    <div class="carousel slide" id="chartCarousel" data-ride="carousel">
+
+      <div class="carousel-inner" role="listbox">
+
+        <div class="item active">
+          <br>
+            <center>
+  &nbsp;&nbsp;&nbsp;&nbsp; <label for="data" style="color: white; font-size: 17px; font-family: sans-serif;">Average Speed Per data</label>
+    &nbsp;&nbsp;<img src="images.png" style="width: 24px; height:19px; margin: auto;">
+  
+
+       
+
+ 
+          <div class="chart" id="chart4"></div>
+<label for="data" style="color: white; font-size: 17px; font-family: sans-serif;">date</label>
+</center>
+                 <br>
+   
+
+        </div>
+      </div><a class="left carousel-control" href="#chartCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#chartCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span><span class="sr-only">Next</span></a>
+    </div>
+  </div>
+<br>
+  <div class="container-fluid">
+    <div class="row">
+   
+      
+        <div class="panel-collapse collapse" id="collapsed-content">
+          <div class="panel-body">
+            <div class="container col-xs-12 col-sm-3">
+              <div class="panel panel-default quick-ranges padding-small">
+                <div class="panel-heading">
+                  
+                </div>
+                <div class="panel-body">
+                  
+                </div>
+              </div>
+            </div>
+            <div class="container col-xs-12 col-sm-3"></div>
+            <div class="container col-xs-12 col-sm-3"></div>
+            <div class="container col-xs-12 col-sm-3">
+           
+            </div>
+          </div>
+        </div>
+      
+    </div>
+    
+    <div class="carousel slide" id="chartCarousel" data-ride="carousel">
+
+      <div class="carousel-inner" role="listbox">
+
+        <div class="item active">
+          <br>
+            <center>
+  &nbsp;&nbsp;&nbsp;&nbsp; <label for="data" style="color: white; font-size: 17px; font-family: sans-serif;">SIGN UPS</label>
+    &nbsp;&nbsp;<img src="images.png" style="width: 24px; height:19px; margin: auto;">
+  
+
+       
+
+          <div class="chart" id="chart5"></div>
+<label for="data" style="color: white; font-size: 17px; font-family: sans-serif;">date</label>
+
+</center>
+                 <br>
+   
+
+        </div>
+      </div><a class="left carousel-control" href="#chartCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#chartCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span><span class="sr-only">Next</span></a>
+    </div>
+  </div>
+<br>
+  <div class="container-fluid">
+    <div class="row">
+   
+      
+        <div class="panel-collapse collapse" id="collapsed-content">
+          <div class="panel-body">
+            <div class="container col-xs-12 col-sm-3">
+              <div class="panel panel-default quick-ranges padding-small">
+                <div class="panel-heading">
+                  
+                </div>
+                <div class="panel-body">
+                  
+                </div>
+              </div>
+            </div>
+            <div class="container col-xs-12 col-sm-3"></div>
+            <div class="container col-xs-12 col-sm-3"></div>
+            <div class="container col-xs-12 col-sm-3">
+           
+            </div>
+          </div>
+        </div>
+      
+    </div>
+    
+    <div class="carousel slide" id="chartCarousel" data-ride="carousel">
+
+      <div class="carousel-inner" role="listbox">
+
+        <div class="item active">
+          <br>
+            <center>
+  &nbsp;&nbsp;&nbsp;&nbsp; <label for="data" style="color: white; font-size: 17px; font-family: sans-serif;">BANDWIDTH USAGES</label>
+    &nbsp;&nbsp;<img src="images.png" style="width: 24px; height:19px; margin: auto;">
+  
+<form id="form1" name="form1" onchange="drawChart12()" >
+      <select id="thedropdown">
+      <option value="" disabled selected>Select your option</option>
+        <option  id="WlanA"><a href="#" style="color: skyblue">ALL WAN Links</a></option>
+        <option  id="LanA"><a href="#" style="color: skyblue">WAN-Port A</a></option>
+        <option  id="PortA"><a href="#" style="color: skyblue">WAN-Port B</a></option>
+     
+      </select>
+         <input type="reset" value="Reset">
+    </form>
+<br>
+       <form id="form2" name="form2" onchange="drawChart13()" >
+      <select id="thedropdown">
+      
+        <option  id="WlanA"><a href="#" style="color: skyblue">Download Usage</a></option>
+        <option  id="LanA"><a href="#" style="color: skyblue">Upload Usage</a></option>
+        
+     
+      </select>
+         <input type="reset" value="Reset">
+    </form>
+       
+
+          <div class="chart" id="chart6"></div>
+<label for="data" style="color: white; font-size: 17px; font-family: sans-serif;">date</label>
+
+</center>
+                 <br>
+   
+
+        </div>
+      </div><a class="left carousel-control" href="#chartCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#chartCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span><span class="sr-only">Next</span></a>
+    </div>
+  </div>
+
+
+<br>
+
+
+
+<div class="container-fluid">
+   
+      
+      
+      
+
+
+
+        <div class="panel-collapse collapse" id="collapsed-content">
+          <div class="panel-body">
+            <div class="container col-xs-12 col-sm-3">
+              <div class="panel panel-default quick-ranges padding-small">
+                <div class="panel-heading">
+              
+                </div>
+                <div class="panel-body">
+                  
+                </div>
+            
+            </div>
+            <div class="container col-xs-12 col-sm-3"></div>
+            <div class="container col-xs-12 col-sm-3"></div>
+            <div class="container col-xs-12 col-sm-3">
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    <div class="carousel slide" id="chartCarousel" data-ride="carousel">
+      <div class="carousel-inner" role="listbox">
+
+        <div class="item active">
+          <br>
+
+            <center>
+    <!-- Trigger the modal with a button -->
+ <panel-title> <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="font-size: 10px; background-color: white; color: black;">SHOW TABLE</button></panel-title>
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+         <!--Creates the popup body-->
+<div>
+  <h2>Basic Table</h2>
+  <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>            
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+     &nbsp;&nbsp;&nbsp;&nbsp; <label for="data" style="color: white; font-size: 17px; font-family: sans-serif;"> LAN Physical Link Up/Down</label>
+     &nbsp;&nbsp;<img src="images.png" style="width: 24px; height:19px; margin: auto;">
+      
+<form id="form1" name="form1" onchange="drawChart1()" >
+      <select id="thedropdown">
+      <option value="" disabled selected>Select your option</option>
+        <option  id="WlanA"><a href="#" style="color: skyblue">ALL WAN Links</a></option>
+        <option  id="LanA"><a href="#" style="color: skyblue">WAN-Port A</a></option>
+        <option  id="PortA"><a href="#" style="color: skyblue">WAN-Port B</a></option>
+     
+      </select>
+         <input type="reset" value="Reset">
+    </form>
+<br>
+       <form id="form2" name="form2" onchange="drawChart6()" >
+      <select id="thedropdown">
+      <option value="" disabled selected>Select your option</option>
+        <option  id="WlanA"><a href="#" style="color: skyblue">Download Usage</a></option>
+        <option  id="LanA"><a href="#" style="color: skyblue">Upload Usage</a></option>
+        
+     
+      </select>
+         <input type="reset" value="Reset">
+    </form>
+       
+
+          <div class="chart" id="chart7"></div>
+</center>
+     
+        </div>
+
+      </div><a class="left carousel-control" href="#chartCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#chartCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span><span class="sr-only">Next</span></a>
+    </div>
+  </div>
+<br>
+
+
+<div class="container-fluid">
+    
+      
+      
+      
+
+
+
+        <div class="panel-collapse collapse" id="collapsed-content">
+          <div class="panel-body">
+            <div class="container col-xs-12 col-sm-3">
+              <div class="panel panel-default quick-ranges padding-small">
+                <div class="panel-heading">
+              
+                </div>
+                <div class="panel-body">
+                  
+                </div>
+            
+            </div>
+            <div class="container col-xs-12 col-sm-3"></div>
+            <div class="container col-xs-12 col-sm-3"></div>
+            <div class="container col-xs-12 col-sm-3">
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    <div class="carousel slide" id="chartCarousel" data-ride="carousel">
+      <div class="carousel-inner" role="listbox">
+
+        <div class="item active">
+          <br>
+
+            <center>
+    <!-- Trigger the modal with a button -->
+ <panel-title> <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="font-size: 10px; background-color: white; color: black;">SHOW TABLE</button></panel-title>
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+         <!--Creates the popup body-->
+<div>
+  <h2>Basic Table</h2>
+  <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>            
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+     &nbsp;&nbsp;&nbsp;&nbsp; <label for="data" style="color: white; font-size: 17px; font-family: sans-serif;"> WAN Physical Link Up/Down</label>
+     &nbsp;&nbsp;<img src="images.png" style="width: 24px; height:19px; margin: auto;">
+      
+<form id="form1" name="form1" onchange="drawChart1()" >
+      <select id="thedropdown">
+      <option value="" disabled selected>Select your option</option>
+        <option  id="WlanA"><a href="#" style="color: skyblue">ALL WAN Links</a></option>
+        <option  id="LanA"><a href="#" style="color: skyblue">WAN-Port A</a></option>
+        <option  id="PortA"><a href="#" style="color: skyblue">WAN-Port B</a></option>
+     
+      </select>
+         <input type="reset" value="Reset">
+    </form>
+<br>
+       <form id="form2" name="form2" onchange="drawChart6()" >
+      <select id="thedropdown">
+      <option value="" disabled selected>Select your option</option>
+        <option  id="WlanA"><a href="#" style="color: skyblue">Download Usage</a></option>
+        <option  id="LanA"><a href="#" style="color: skyblue">Upload Usage</a></option>
+        
+     
+      </select>
+         <input type="reset" value="Reset">
+    </form>
+       
+
+          <div class="chart" id="chart8"></div>
+</center>
+     
+        </div>
+
+      </div><a class="left carousel-control" href="#chartCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#chartCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span><span class="sr-only">Next</span></a>
+    </div>
+  </div>
+
+<br>
+
+<table width="100%">
+  <td><div class="container-fluid">
+  
+   
+        <div class="panel-collapse collapse" id="collapsed-content">
+          <div class="panel-body">
+            <div class="container col-xs-12 col-sm-3">
+              <div class="panel panel-default quick-ranges padding-small">
+                <div class="panel-heading">
+                  <h4 class="panel-title"> <span class="glyphicon glyphicon-cog pull-left"></span><span> QUICK RANGES</span></h4>
+                </div>
+                <div class="panel-body">
+                  
+                </div>
+              </div>
+            </div>
+            <div class="container col-xs-12 col-sm-3"></div>
+            <div class="container col-xs-12 col-sm-3"></div>
+            <div class="container col-xs-12 col-sm-3">
+           
+            </div>
+          </div>
+        </div>
+     
+    <div class="carousel slide" id="chartCarousel" data-ride="carousel">
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <CENTER>
+            <br>
+          &nbsp;&nbsp;&nbsp;&nbsp; <label for="data" style="color: white; font-size: 17px; font-family: sans-serif;"> OS WISE USER DISTRIBUTION</label>
+     &nbsp;&nbsp;<img src="images.png" style="width: 24px; height:19px; margin: auto;">
+          <div class="chart" id="chart10"></div>
+          <label style="color:  yellow">N/A</label>
+</CENTER>
+    
+        </div>
+      </div><a class="left carousel-control" href="#chartCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#chartCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span><span class="sr-only">Next</span></a>
+    </div>
+  </div></td>
+<td >
+
+<div class="container-fluid" style="position: relative; ">
+ 
+   
+        <div class="panel-collapse collapse" id="collapsed-content">
+          <div class="panel-body">
+            <div class="container col-xs-12 col-sm-3">
+              <div class="panel panel-default quick-ranges padding-small">
+                <div class="panel-heading">
+                  <h4 class="panel-title"> <span class="glyphicon glyphicon-cog pull-left"></span><span> QUICK RANGES</span></h4>
+                </div>
+                <div class="panel-body">
+                 
+                </div>
+              
+            <div class="container col-xs-12 col-sm-3"></div>
+            <div class="container col-xs-12 col-sm-3"></div>
+            <div class="container col-xs-12 col-sm-3">
+           
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel slide" id="chartCarousel" data-ride="carousel">
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <center>
+            <br>
+         &nbsp;&nbsp;&nbsp;&nbsp; <label for="data" style="color: white; font-size: 17px; font-family: sans-serif;">BROWSER WISE USER DISTRIBUTION</label>
+     &nbsp;&nbsp;<img src="images.png" style="width: 24px; height:19px; margin: auto;">
+          <div class="chart" id="chart11"></div>
+          <label style="color: yellow">N/A</label>
+</center>
+    
+        </div>
+      </div><a class="left carousel-control" href="#chartCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#chartCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span><span class="sr-only">Next</span></a>
+    </div>
+  </div></td>
+</table>
+</body>
+
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.10.0/math.min.js"></script>
+<script src="const.js"></script>
+</html>

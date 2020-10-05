@@ -1,0 +1,236 @@
+
+
+
+
+body#gchart-bdp:hover {
+ transition: right 0.3s;
+  transform: scale(0.995);
+
+
+
+}
+
+
+
+body#gchart-bdp {
+	 font-family: 'Nunito';
+	 width: 1550px;
+  margin: 0 auto;
+    justify-content: center;
+  
+}
+ body#gchart-bdp .datepicker-component-container {
+	 position: relative;
+	 z-index: 2;
+	 top: 30px;
+	 overflow-x: auto;
+}
+ body#gchart-bdp .datepicker-toggler {
+	 cursor: pointer;
+}
+ body#gchart-bdp .datepicker .old, body#gchart-bdp .datepicker .new {
+	 background-color: #fff;
+	 color: #999;
+}
+ body#gchart-bdp .datepicker .active {
+	 background-color: #f2f2f2;
+	 color: #000;
+	 text-shadow: none;
+	 border-radius: 0;
+	 font-weight: 700;
+}
+ body#gchart-bdp .datepicker .active:not(.datepicker-days) {
+	 box-shadow: inset 0 -1px #fff, inset 1px 0 #fff, inset 0 1px #fff, inset -1px 0 #fff, inset 0 -2px #777, inset 2px 0 #777, inset 0 2px #777, inset -2px 0 #777;
+}
+ body#gchart-bdp .datepicker .disabled {
+	 background-color: #fafafa;
+	 color: lightgrey;
+}
+ body#gchart-bdp .datepicker tbody {
+	 background-color: #fff;
+	 border-bottom: 1px solid lightgrey;
+	 margin-top: 4px !important;
+}
+ body#gchart-bdp .datepicker thead tr {
+	 border-bottom: 1px solid lightgrey;
+}
+ body#gchart-bdp .datepicker table tr td, body#gchart-bdp .datepicker table tr th, body#gchart-bdp .datepicker .focused {
+	 border-radius: 0;
+}
+ body#gchart-bdp .datepicker .dow {
+	 color: grey;
+	 text-transform: uppercase;
+	 font-weight: normal;
+	 font-size: 10px;
+}
+ body#gchart-bdp .datepicker .today {
+	 text-transform: uppercase;
+}
+ body#gchart-bdp .datepicker .clear {
+	 text-transform: uppercase;
+	 color: grey;
+	 font-size: 10px;
+}
+ body#gchart-bdp .datepicker .datepicker-days td {
+	 box-shadow: inset 0 -1px #fff, inset 1px 0 #fff, inset 0 1px #fff, inset -1px 0 #fff;
+	 border: none;
+	 background-color: #f2f2f2;
+	 font-size: 10px;
+}
+ body#gchart-bdp .datepicker .datepicker-days td:hover {
+	 border-radius: 0;
+	 box-shadow: inset 0 -1px #fff, inset 1px 0 #fff, inset 0 1px #fff, inset -1px 0 #fff, inset 0 -2px #aaa, inset 2px 0 #aaa, inset 0 2px #aaa, inset -2px 0 #aaa;
+}
+ body#gchart-bdp .datepicker .datepicker-days td.disabled:hover {
+	 box-shadow: none;
+}
+ body#gchart-bdp .datepicker .datepicker-months td, body#gchart-bdp .datepicker .datepicker-years td, body#gchart-bdp .datepicker .datepicker-decades td, body#gchart-bdp .datepicker .datepicker-centuries td {
+	 background: #fff;
+}
+ body#gchart-bdp .datepicker .datepicker-months td span:hover, body#gchart-bdp .datepicker .datepicker-years td span:hover, body#gchart-bdp .datepicker .datepicker-decades td span:hover, body#gchart-bdp .datepicker .datepicker-centuries td span:hover {
+	 box-shadow: inset 0 -1px #fff, inset 1px 0 #fff, inset 0 1px #fff, inset -1px 0 #fff, inset 0 -2px #aaa, inset 2px 0 #aaa, inset 0 2px #aaa, inset -2px 0 #aaa;
+	 border-radius: 0;
+}
+ body#gchart-bdp .datepicker .datepicker-months td span.disabled:hover, body#gchart-bdp .datepicker .datepicker-years td span.disabled:hover, body#gchart-bdp .datepicker .datepicker-decades td span.disabled:hover, body#gchart-bdp .datepicker .datepicker-centuries td span.disabled:hover {
+	 box-shadow: none;
+}
+ body#gchart-bdp .datepicker .today, body#gchart-bdp .datepicker .clear, body#gchart-bdp .datepicker .day, body#gchart-bdp .datepicker .month {
+	 transition: ease-out 0.3s;
+}
+ body#gchart-bdp .datepicker .today:hover, body#gchart-bdp .datepicker .clear:hover, body#gchart-bdp .datepicker .day:hover, body#gchart-bdp .datepicker .month:hover {
+	 transition: ease-in 0.3s;
+}
+ body#gchart-bdp .datepicker .datepicker-days, body#gchart-bdp .datepicker .datepicker-months, body#gchart-bdp .datepicker .datepicker-years, body#gchart-bdp .datepicker .datepicker-decades, body#gchart-bdp .datepicker .datepicker-centuries {
+	 animation: fadeIn 0.3s ease-in;
+}
+ @keyframes fadeIn {
+	 from {
+		 opacity: 0;
+	}
+	 to {
+		 opacity: 1;
+	}
+}
+ body#gchart-bdp .chart {
+	 height: 500px;
+}
+ body#gchart-bdp #chartCarousel {
+	 border-radius: 2px;
+	 background-image: linear-gradient(to top, #448ac8, #31abc8);
+}
+ body#gchart-bdp .chart circle[stroke] {
+	 r: 5px;
+	 stroke: white;
+	 stroke-width: 3;
+	 animation: 0.3s ease fadeIn;
+}
+ body#gchart-bdp .google-visualization-tooltip {
+	 width: 200px;
+	 animation: 0.3s ease fadeInChartOnmouseover;
+	 border: 2px rgba(120, 120, 120, .95) solid !important;
+	 box-shadow: none !important;
+	 background-color: rgba(255, 255, 255, .9) !important;
+}
+ body#gchart-bdp .google-visualization-tooltip > ul > li > span {
+	 font-family: "Nunito" !important;
+	 font-size: 12px !important;
+	 font-style: italic;
+}
+ body#gchart-bdp .nav-pills a {
+	 transition: 0.25s ease-in-out;
+}
+ body#gchart-bdp .nav-pills a:hover {
+	 transition: 0.25s ease-in-out;
+}
+ body#gchart-bdp .quick-ranges {
+	 border-color: #c5c5c5;
+	 box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+ body#gchart-bdp .quick-ranges .panel-heading, body#gchart-bdp .quick-ranges .panel-body {
+	 background: #fff;
+}
+ body#gchart-bdp .quick-ranges a.dropdown-toggle {
+	 font-weight: 700;
+}
+ body#gchart-bdp .padding-small {
+	 padding: 4px;
+}
+ body#gchart-bdp .panel-body {
+	 padding: 0;
+	 background: #ccc;
+}
+ body#gchart-bdp .panel-body, body#gchart-bdp .dropdown-menu {
+	 text-align: center;
+	 font-size: 12px;
+	 padding-bottom: 0;
+}
+ body#gchart-bdp .dropdown-toggle {
+	 color: #000;
+}
+ body#gchart-bdp .open > .dropdown-menu {
+	 animation: fadeIn 0.2s ease forwards;
+}
+ body#gchart-bdp .quick-ranges {
+	 margin-top: 10px;
+}
+ body#gchart-bdp .quick-ranges li {
+	 margin-top: 0;
+}
+ body#gchart-bdp .quick-ranges li a {
+	 border-radius: 0;
+	 color: #999;
+	 background-color: #fff;
+}
+ body#gchart-bdp .quick-ranges li a:hover {
+	 color: #000;
+	 background-color: #f3f3f3;
+	 box-shadow: inset 0 -1px #fff, inset 1px 0 #fff, inset 0 1px #fff, inset -1px 0 #fff, inset 0 -2px #aaa, inset 2px 0 #aaa, inset 0 2px #aaa, inset -2px 0 #aaa;
+}
+ body#gchart-bdp .quick-ranges li.active a {
+	 border-radius: 0;
+	 color: #000;
+	 box-shadow: inset 0 -1px #fff, inset 1px 0 #fff, inset 0 1px #fff, inset -1px 0 #fff, inset 0 -2px #000, inset 2px 0 #000, inset 0 2px #000, inset -2px 0 #000;
+	 background-color: #f3f3f3;
+}
+ body#gchart-bdp .quick-ranges li.active a:hover, body#gchart-bdp .quick-ranges li.active a:focus {
+	 color: #000;
+	 background-color: #f3f3f3;
+}
+ body#gchart-bdp .quick-ranges h4 {
+	 font-weight: 700;
+	 font-size: 12px;
+}
+ body#gchart-bdp hr {
+	 display: block;
+	 width: 100%;
+	 border: 0;
+	 border-top: 1px solid lightgrey;
+	 padding: 0;
+	 margin: 0;
+}
+ body#gchart-bdp .carousel-control {
+	 background: none;
+	 width: 8%;
+	 transition: 0.3s ease-in;
+}
+ body#gchart-bdp .carousel-control .glyphicon {
+	 height: 50px;
+	 width: 50px;
+	 line-height: 1.6;
+	 border-radius: 100%;
+	 background: #f2f2f2;
+	 text-shadow: 0 1px 0 #ddd, 1px 0 0 #ddd, 0 -1px 0 #ddd, -1px 0 0 #ddd;
+	 top: 50%;
+	 transition: 0.25s ease-in;
+}
+ body#gchart-bdp .carousel-control .glyphicon:hover {
+	 background: #ddd;
+}
+ @media (max-width: 768px) {
+	 body#gchart-bdp .carousel-control .glyphicon {
+		 background: none;
+		 border: none !important;
+		 text-shadow: 0 1px 0 grey, 1px 0 0 grey, 0 -1px 0 grey, -1px 0 0 grey;
+	}
+}
+ 
